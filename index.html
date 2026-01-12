@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Oasis Diagnósticos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brandLogo">OA</div>
+      <div class="brandText">
+        <div class="brandTitle">Oasis Diagnósticos</div>
+        <div class="brandSub">Suite 2026 · Códigos + Historial por cliente</div>
+      </div>
+    </div>
+
+    <nav class="tabs" id="tabs">
+      <button class="tab is-active" data-view="diag" type="button">Diagnóstico</button>
+      <button class="tab" data-view="codes" type="button">Códigos</button>
+      <button class="tab" data-view="history" type="button">Historial</button>
+    </nav>
+
+    <div class="topActions">
+      <button class="btn ghost" id="btnNew" type="button">Nuevo</button>
+      <button class="btn" id="btnSave" type="button">Guardar</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- KPI -->
+    <section class="kpiGrid">
+      <article class="kpiCard kpi-a">
+        <div class="kpiLabel">Diagnósticos</div>
+        <div class="kpiValue" id="kpiDocs">0</div>
+        <div class="kpiHint">Historial local</div>
+      </article>
+
+      <article class="kpiCard kpi-b">
+        <div class="kpiLabel">Cliente activo</div>
+        <div class="kpiValue" id="kpiClient">—</div>
+        <div class="kpiHint">Documento en edición</div>
+      </article>
+
+      <article class="kpiCard kpi-c">
+        <div class="kpiLabel">Códigos</div>
+        <div class="kpiValue" id="kpiCodes">0</div>
+        <div class="kpiHint">Base codes.json</div>
+      </article>
+    </section>
+
+    <!-- VIEW: DIAGNÓSTICO -->
+    <section class="view is-active" id="view-diag">
+      <section class="card section">
+        <div class="sectionHead">
+          <div>
+            <div class="h1">Diagnóstico</div>
+            <div class="muted">Captura rápido, guarda limpio, consulta al instante.</div>
+          </div>
+          <div class="pill" id="modePill">Nuevo</div>
+        </div>
+
+        <div class="grid3">
+          <div class="field">
+            <label>Cliente</label>
+            <input class="input" id="client" placeholder="Nombre del cliente" />
+          </div>
+          <div class="field">
+            <label>Contacto</label>
+            <input class="input" id="contact" placeholder="787-000-0000 / email" />
+          </div>
+          <div class="field">
+            <label>Fecha</label>
+            <input class="input" id="date" type="date" />
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label>Equipo / Marca / Modelo</label>
+            <input class="input" id="equipment" placeholder="Ej: Midea 18k Inverter / Modelo..." />
+          </div>
+          <div class="field">
+            <label>Ubicación</label>
+            <input class="input" id="location" placeholder="Área / dirección" />
+          </div>
+        </div>
+
+        <div class="grid2" style="margin-top:10px">
+          <div class="field">
+            <label>Diagnóstico técnico</label>
+            <textarea class="input" id="diagnosis" rows="7" placeholder="Síntomas, lecturas, observaciones..."></textarea>
+          </div>
+          <div class="field">
+            <label>Solución / Recomendación</label>
+            <textarea class="input" id="solution" rows="7" placeholder="Acción correctiva, piezas, recomendaciones..."></textarea>
+          </div>
+        </div>
+
+        <div class="rowBtns" style="margin-top:12px">
+          <button class="btn ghost" id="btnDuplicate" type="button">Duplicar</button>
+          <button class="btn danger" id="btnDelete" type="button">Borrar</button>
+        </div>
+
+        <div class="hint">Tip: en <b>Códigos</b> toca <b>Usar</b> y rellena Diagnóstico + Solución automáticamente.</div>
+      </section>
+    </section>
+
+    <!-- VIEW: CÓDIGOS -->
+    <section class="view" id="view-codes">
+      <section class="card section">
+        <div class="sectionHead">
+          <div>
+            <div class="h1">Códigos rápidos</div>
+            <div class="muted">Busca por código o palabra: <b>E6</b>, <b>EC</b>, <b>sensor</b>, <b>comunicación</b>, <b>voltaje</b>…</div>
+          </div>
+          <div class="pill" id="codesStatus">Cargando…</div>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label>Marca</label>
+            <select class="input" id="brand">
+              <option value="ALL">Todas</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Buscar</label>
+            <input class="input" id="codeSearch" placeholder="Ej: E1, F1, EC, NTC, fuga, alta presión..." />
+          </div>
+        </div>
+
+        <div class="codesGrid" id="codeResults"></div>
+      </section>
+    </section>
+
+    <!-- VIEW: HISTORIAL -->
+    <section class="view" id="view-history">
+      <section class="card section">
+        <div class="sectionHead">
+          <div>
+            <div class="h1">Historial</div>
+            <div class="muted">Busca por cliente, equipo o palabra clave. Abre y edita cuando quieras.</div>
+          </div>
+
+          <div class="rowBtns">
+            <input class="input small" id="histSearch" placeholder="Buscar historial..." />
+            <button class="btn ghost" id="btnExport" type="button">Export</button>
+            <button class="btn ghost" id="btnImport" type="button">Import</button>
+            <input id="importFile" type="file" accept="application/json" hidden />
+            <button class="btn danger" id="btnClearAll" type="button">Vaciar</button>
+          </div>
+        </div>
+
+        <div class="tableWrap">
+          <table class="histTable">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Cliente</th>
+                <th>Equipo</th>
+                <th>Resumen</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="histBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <!-- HUB -->
+  <a class="hubFab" id="hubBtn" href="#" title="Volver a Oasis Hub" aria-label="Volver a Oasis Hub">⟵ Hub</a>
+
+  <script src="app.js"></script>
+</body>
+</html>
