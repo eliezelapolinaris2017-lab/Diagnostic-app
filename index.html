@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Oasis Hub • Diagnósticos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logoDot"></div>
+    <div>
+      <div class="brandTitle">Diagnósticos</div>
+      <div class="brandSub">Historial técnico por cliente • Oasis Hub</div>
+    </div>
+  </div>
+
+  <div class="topActions">
+    <button id="btnTabDiag" class="tabBtn tabActive">Diagnóstico</button>
+    <button id="btnTabCodes" class="tabBtn">Códigos</button>
+    <button id="btnNew" class="btn btnPrimary">Nuevo</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- TAB: DIAGNÓSTICO -->
+  <section id="tabDiag" class="tabPanel">
+    <section class="card hero">
+      <div class="cardHead">
+        <h1>Nuevo diagnóstico</h1>
+        <div class="pill" id="todayPill">—</div>
+      </div>
+
+      <div class="grid2">
+        <label class="field">
+          <span>Cliente</span>
+          <input id="cliente" type="text" placeholder="Nombre del cliente" autocomplete="off" />
+        </label>
+
+        <label class="field">
+          <span>Equipo / Marca / Modelo</span>
+          <input id="equipo" type="text" placeholder="Ej: Midea • 12k • Inverter" autocomplete="off" />
+        </label>
+
+        <label class="field">
+          <span>Ubicación</span>
+          <input id="ubicacion" type="text" placeholder="Ej: Puerto Nuevo" autocomplete="off" />
+        </label>
+
+        <label class="field">
+          <span>Código (opcional)</span>
+          <div class="row">
+            <input id="codigo" type="text" placeholder="Ej: E5, P0, EC..." autocomplete="off" />
+            <button id="btnLookup" class="btn btnGhost" type="button">Buscar</button>
+          </div>
+          <small class="hint">El sistema puede autollenar diagnóstico/solución basado en el código.</small>
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Diagnóstico técnico</span>
+        <textarea id="diagnostico" placeholder="Hallazgos, síntomas, lecturas, pruebas realizadas..."></textarea>
+      </label>
+
+      <label class="field">
+        <span>Solución / Recomendación</span>
+        <textarea id="solucion" placeholder="Acción tomada, piezas, recomendación, próximos pasos..."></textarea>
+      </label>
+
+      <div class="actionsRow">
+        <button id="btnSave" class="btn btnPrimary">Guardar</button>
+        <button id="btnClear" class="btn btnDangerGhost" type="button">Limpiar</button>
+        <div class="status" id="statusMsg"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="cardHead">
+        <h2>Historial</h2>
+        <div class="right">
+          <button id="btnExport" class="btn btnGhost" type="button">Exportar JSON</button>
+          <button id="btnWipe" class="btn btnDangerGhost" type="button">Borrar todo</button>
+        </div>
+      </div>
+
+      <div class="searchRow">
+        <input id="search" type="search" placeholder="Buscar por cliente, equipo, ubicación o código..." />
+        <select id="filterBrand" class="select">
+          <option value="">Todas las marcas</option>
+          <option>Midea</option>
+          <option>Gree</option>
+          <option>TGM</option>
+          <option>Fujitsu</option>
+          <option>Samsung</option>
+          <option>Carrier</option>
+          <option>AirMax</option>
+          <option>General</option>
+        </select>
+        <select id="filterSeverity" class="select">
+          <option value="">Todas las severidades</option>
+          <option>Alta</option>
+          <option>Media</option>
+          <option>Baja</option>
+        </select>
+      </div>
+
+      <div id="list" class="list"></div>
+      <div id="empty" class="empty">
+        <div class="emptyTitle">Sin registros</div>
+        <div class="emptySub">Guarda tu primer diagnóstico y lo verás aquí.</div>
+      </div>
+    </section>
+  </section>
+
+  <!-- TAB: CÓDIGOS -->
+  <section id="tabCodes" class="tabPanel hidden">
+    <section class="card hero">
+      <div class="cardHead">
+        <h1>Buscador de códigos</h1>
+        <div class="pill pill2" id="codesPill">—</div>
+      </div>
+
+      <div class="searchRow">
+        <input id="codeSearch" type="search" placeholder="Busca por código, título o palabra clave (ej: comunicación, NTC, IPM)..." />
+        <select id="codeBrand" class="select">
+          <option value="">Todas las marcas</option>
+          <option>Midea</option><option>Gree</option><option>TGM</option><option>Fujitsu</option>
+          <option>Samsung</option><option>Carrier</option><option>AirMax</option><option>General</option>
+        </select>
+        <select id="codeCategory" class="select">
+          <option value="">Todas las categorías</option>
+          <option>Comunicación</option>
+          <option>Inverter</option>
+          <option>Sensores</option>
+          <option>Ventilación</option>
+          <option>Refrigerante</option>
+          <option>Drenaje</option>
+          <option>Alimentación</option>
+          <option>Protección</option>
+          <option>Compresor</option>
+        </select>
+      </div>
+
+      <div id="codesList" class="codesGrid"></div>
+      <div id="codesEmpty" class="empty">
+        <div class="emptyTitle">Sin resultados</div>
+        <div class="emptySub">Cambia filtros o prueba otra palabra.</div>
+      </div>
+    </section>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modalCard">
+      <div class="modalHead">
+        <div class="modalTitle">Detalle del código</div>
+        <button id="btnCloseModal" class="btn btnGhost" type="button">Cerrar</button>
+      </div>
+      <div id="modalBody" class="modalBody"></div>
+      <div class="modalFoot">
+        <button id="btnApply" class="btn btnPrimary" type="button">Aplicar al diagnóstico</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Botón estándar Oasis Hub -->
+<button class="hubBack" onclick="goHub()">← Hub</button>
+
+<script src="app.js"></script>
+</body>
+</html>
