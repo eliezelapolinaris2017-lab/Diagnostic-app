@@ -1,232 +1,25 @@
 {
-  "Midea": [
-    {
-      "code": "E1",
-      "title": "Falla de comunicación Indoor ↔ Outdoor",
-      "cause": "Cableado/terminales flojos, polaridad incorrecta, interferencia o PCB (indoor/outdoor).",
-      "fix": "Verificar continuidad/polaridad, reapretar terminales, inspeccionar conectores. Si persiste, diagnosticar PCB.",
-      "severity": "Alta",
-      "tags": ["comunicacion", "pcb", "wiring"]
-    },
-    {
-      "code": "E2",
-      "title": "Zero Crossing / detección cruce por cero",
-      "cause": "Alimentación AC inestable, filtro EMI, PCB o instalación eléctrica.",
-      "fix": "Medir voltaje y estabilidad, revisar conexiones y protección. Evaluar PCB si la línea está estable.",
-      "severity": "Media",
-      "tags": ["power", "pcb"]
-    },
-    {
-      "code": "E3",
-      "title": "Motor abanico (indoor) anormal",
-      "cause": "Motor/driver, obstrucción, cableado o PCB.",
-      "fix": "Verificar motor/arnés, obstrucciones y control en PCB.",
-      "severity": "Media",
-      "tags": ["fan", "motor"]
-    },
-    {
-      "code": "EC",
-      "title": "Detección de fuga / falta de refrigerante",
-      "cause": "Baja carga por fuga, instalación deficiente, restricción o sensores.",
-      "fix": "Prueba de fugas (N2), corrección, vacío y carga por peso. Validar superheat/subcool.",
-      "severity": "Alta",
-      "tags": ["refrigerante", "fuga", "leak"]
-    },
-    {
-      "code": "P1",
-      "title": "Voltaje anormal",
-      "cause": "Bajo/alto voltaje, conexión floja, circuito compartido o protección deficiente.",
-      "fix": "Medir línea, corregir instalación, reapretar conexiones. Añadir protector/UPS según necesidad.",
-      "severity": "Alta",
-      "tags": ["voltaje", "power"]
-    },
-    {
-      "code": "F0",
-      "title": "Protección por sobrecorriente (Inverter)",
-      "cause": "Compresor forzado, IPM/drive, alimentación irregular, carga anormal.",
-      "fix": "Verificar alimentación, compresor, IPM/drive, cableado. Diagnóstico por pasos del inverter.",
-      "severity": "Alta",
-      "tags": ["overcurrent", "inverter", "ipm"]
-    }
-  ],
-  "Gree": [
-    {
-      "code": "E6",
-      "title": "Falla de comunicación Indoor ↔ Outdoor",
-      "cause": "Cableado incorrecto, conectores flojos, interferencia o PCB.",
-      "fix": "Verificar polaridad/continuidad, reapretar terminales, revisar conectores. Diagnosticar PCB si persiste.",
-      "severity": "Alta",
-      "tags": ["comunicacion", "pcb", "wiring"]
-    },
-    {
-      "code": "F1",
-      "title": "Sensor ambiente interior (NTC) abierto/corto",
-      "cause": "NTC defectuoso o arnés/conector con falla.",
-      "fix": "Medir resistencia NTC, revisar conectores y reemplazar sensor si está fuera de rango.",
-      "severity": "Media",
-      "tags": ["sensor", "ntc", "ambiente"]
-    },
-    {
-      "code": "F2",
-      "title": "Sensor evaporador interior (NTC) abierto/corto",
-      "cause": "NTC/arnés defectuoso, humedad en conector.",
-      "fix": "Verificar NTC y arnés. Reemplazar si falla.",
-      "severity": "Media",
-      "tags": ["sensor", "ntc", "evaporador"]
-    },
-    {
-      "code": "F3",
-      "title": "Sensor ambiente exterior (NTC) abierto/corto",
-      "cause": "Sensor/arnés defectuoso.",
-      "fix": "Diagnosticar NTC, conectores y reemplazo si aplica.",
-      "severity": "Media",
-      "tags": ["sensor", "exterior", "ntc"]
-    },
-    {
-      "code": "F4",
-      "title": "Sensor del tubo/serpentín exterior (NTC) abierto/corto",
-      "cause": "Sensor/arnés defectuoso.",
-      "fix": "Revisar NTC y reemplazar si está fuera de rango.",
-      "severity": "Media",
-      "tags": ["sensor", "condensador", "ntc"]
-    },
-    {
-      "code": "F5",
-      "title": "Sensor descarga compresor (NTC) abierto/corto",
-      "cause": "Sensor descarga o cableado.",
-      "fix": "Diagnóstico NTC descarga y arnés; reemplazo si falla.",
-      "severity": "Alta",
-      "tags": ["sensor", "descarga", "ntc"]
-    },
-    {
-      "code": "H3",
-      "title": "Protección por sobrecarga compresor",
-      "cause": "Condensador sucio, flujo de aire deficiente, carga incorrecta, alta presión.",
-      "fix": "Limpieza condensador, verificar abanico, validar carga y condiciones de operación.",
-      "severity": "Alta",
-      "tags": ["compresor", "alta", "presion"]
-    }
-  ],
-  "Carrier": [
-    {
-      "code": "E1",
-      "title": "Error de comunicación indoor/outdoor",
-      "cause": "Cableado, conectores o PCB.",
-      "fix": "Revisar continuidad/polaridad, reapretar terminales. Evaluar PCB si persiste.",
-      "severity": "Alta",
-      "tags": ["comunicacion", "pcb"]
-    },
-    {
-      "code": "E3",
-      "title": "Velocidad de abanico interior anormal",
-      "cause": "Motor/driver, obstrucción o PCB.",
-      "fix": "Verificar motor, arnés, obstrucciones y control.",
-      "severity": "Media",
-      "tags": ["fan", "motor"]
-    },
-    {
-      "code": "E4",
-      "title": "Sensor ambiente interior (T1) abierto/corto",
-      "cause": "Sensor o cableado.",
-      "fix": "Medir sensor/NTC, revisar conectores, reemplazar si está fuera de rango.",
-      "severity": "Media",
-      "tags": ["sensor", "t1"]
-    },
-    {
-      "code": "E5",
-      "title": "Sensor evaporador (T2) abierto/corto",
-      "cause": "Sensor/arnés defectuoso.",
-      "fix": "Revisar sensor T2 y arnés; reemplazar si falla.",
-      "severity": "Media",
-      "tags": ["sensor", "t2"]
-    },
-    {
-      "code": "EC",
-      "title": "Detección de fuga / refrigerante",
-      "cause": "Baja carga por fuga o condición asociada.",
-      "fix": "Prueba de fugas, corrección, vacío y carga por peso.",
-      "severity": "Alta",
-      "tags": ["refrigerante", "fuga"]
-    }
-  ],
-  "Fujitsu": [
-    {
-      "code": "E:01",
-      "title": "Error de comunicación indoor ↔ outdoor",
-      "cause": "Arnés, conectores, cableado o placas.",
-      "fix": "Revisar conexiones, continuidad y componentes de control.",
-      "severity": "Alta",
-      "tags": ["comunicacion", "pcb"]
-    },
-    {
-      "code": "E:02",
-      "title": "Sensor temperatura ambiente abierto",
-      "cause": "Sensor abierto/desconectado.",
-      "fix": "Verificar sensor/cableado y reemplazar si aplica.",
-      "severity": "Media",
-      "tags": ["sensor", "ambiente"]
-    },
-    {
-      "code": "E:03",
-      "title": "Sensor temperatura ambiente en corto",
-      "cause": "Sensor en corto/cableado.",
-      "fix": "Diagnóstico sensor y reemplazo si aplica.",
-      "severity": "Media",
-      "tags": ["sensor", "ambiente"]
-    }
-  ],
-  "Samsung": [
-    {
-      "code": "E101",
-      "title": "Comunicación indoor/outdoor (general)",
-      "cause": "Cableado, conectores, interferencia o PCB.",
-      "fix": "Verificar cableado y conectores; comprobar señal y PCB si aplica.",
-      "severity": "Alta",
-      "tags": ["comunicacion", "pcb"]
-    },
-    {
-      "code": "E458",
-      "title": "Sensor / temperatura (general)",
-      "cause": "Sensor/arnés defectuoso (varía por modelo).",
-      "fix": "Diagnóstico NTC y arnés; reemplazo según lectura.",
-      "severity": "Media",
-      "tags": ["sensor", "ntc"]
-    }
-  ],
-  "TGM": [
-    {
-      "code": "E1",
-      "title": "Comunicación / señal (general)",
-      "cause": "Cableado/terminales o control.",
-      "fix": "Verificar continuidad/polaridad, reapretar terminales y validar placas.",
-      "severity": "Alta",
-      "tags": ["comunicacion"]
-    },
-    {
-      "code": "P1",
-      "title": "Voltaje anormal (general)",
-      "cause": "Bajo/alto voltaje o conexión floja.",
-      "fix": "Medir línea, corregir instalación y asegurar protección eléctrica.",
-      "severity": "Alta",
-      "tags": ["voltaje"]
-    }
-  ],
-  "AirMax": [
-    {
-      "code": "E6",
-      "title": "Comunicación indoor/outdoor (general)",
-      "cause": "Cableado o control.",
-      "fix": "Verificar cableado/terminales y continuidad; revisar placas si persiste.",
-      "severity": "Alta",
-      "tags": ["comunicacion"]
-    },
-    {
-      "code": "F1",
-      "title": "Sensor interior (general)",
-      "cause": "Sensor/arnés defectuoso.",
-      "fix": "Medir NTC y reemplazar si está fuera de rango.",
-      "severity": "Media",
-      "tags": ["sensor", "ntc"]
-    }
+  "version": "2026-01-12",
+  "items": [
+    { "id":"GEN-P0", "brand":"General", "code":"P0", "title":"Protección / error en tarjeta principal (Main Board)", "category":"Electrónica", "severity":"Alta", "fix":"Revisar voltaje, conectores, inverter/IPM, daño en PCB. Si persiste: reemplazo PCB." },
+
+    { "id":"MD-EC", "brand":"Midea", "code":"EC", "title":"Protección por fuga / falta de refrigerante", "category":"Refrigerante", "severity":"Alta", "fix":"Buscar fuga, corregir, vacío, carga por peso. Revisar sensores y presión." },
+    { "id":"MD-E5", "brand":"Midea", "code":"E5", "title":"Protección sobrecorriente / drive", "category":"Inverter", "severity":"Alta", "fix":"Revisar compresor, IPM/inverter, capacitor (si aplica), voltaje y cableado. Verificar ventilación condensador." },
+    { "id":"MD-EL", "brand":"Midea", "code":"EL", "title":"Error de comunicación interior-exterior", "category":"Comunicación", "severity":"Alta", "fix":"Revisar cableado S1/S2/S3, polaridad, conectores, tierra, PCB interior/exterior." },
+
+    { "id":"GR-EE", "brand":"Gree", "code":"EE", "title":"Nivel de agua / drenaje (según serie)", "category":"Drenaje", "severity":"Media", "fix":"Limpiar bandeja, revisar bomba (si hay), sensor flotador y drenaje obstruido." },
+    { "id":"GR-E6", "brand":"Gree", "code":"E6", "title":"Error de comunicación", "category":"Comunicación", "severity":"Alta", "fix":"Revisar interconexión, conectores, PCB y alimentación estable." },
+    { "id":"GR-P0", "brand":"Gree", "code":"P0", "title":"Módulo inverter / IPM", "category":"Inverter", "severity":"Alta", "fix":"Revisar IPM, compresor, cortos, voltaje. Si dañado: módulo/PCB." },
+
+    { "id":"FJ-EE", "brand":"Fujitsu", "code":"EE", "title":"Comunicación / señal (según modelo)", "category":"Comunicación", "severity":"Alta", "fix":"Verificar cableado, conectores, PCB, tensión y ruido eléctrico." },
+    { "id":"FJ-E0", "brand":"Fujitsu", "code":"E0", "title":"Error de comunicación unidad", "category":"Comunicación", "severity":"Alta", "fix":"Revisar interconexión, PCB interior/exterior, alimentación y tierra." },
+
+    { "id":"SA-E5", "brand":"Samsung", "code":"E5", "title":"Protección / sensor / comunicación (según serie)", "category":"Electrónica", "severity":"Media", "fix":"Validar manual por modelo; revisar sensores y cableado, reinicio eléctrico." },
+
+    { "id":"CA-E1", "brand":"Carrier", "code":"E1", "title":"Sensor temperatura ambiente / evaporador (según serie)", "category":"Sensores", "severity":"Media", "fix":"Medir NTC, revisar conectores, reemplazar sensor si fuera de rango." },
+    { "id":"CA-E6", "brand":"Carrier", "code":"E6", "title":"Error de comunicación", "category":"Comunicación", "severity":"Alta", "fix":"Revisar interconexión, conectores, PCB, voltaje estable." },
+
+    { "id":"TGM-E5", "brand":"TGM", "code":"E5", "title":"Sobrecorriente / drive", "category":"Inverter", "severity":"Alta", "fix":"Revisar compresor, IPM/PCB, ventilación y voltaje." },
+    { "id":"AM-EC", "brand":"AirMax", "code":"EC", "title":"Fuga / protección de refrigerante (según serie)", "category":"Refrigerante", "severity":"Alta", "fix":"Buscar fuga, vacío, cargar por peso. Revisar sensores/valvulería." }
   ]
 }
