@@ -1,0 +1,108 @@
+{
+  "Midea": [
+    {
+      "code": "E1",
+      "title": "Falla de comunicación Indoor ↔ Outdoor",
+      "cause": "Cableado/terminales flojos, polaridad incorrecta, interferencia o PCB.",
+      "fix": "Verificar continuidad/polaridad, reapretar terminales, revisar conectores; diagnosticar PCB si persiste.",
+      "severity": "Alta",
+      "tags": ["comunicacion", "pcb", "wiring"]
+    },
+    {
+      "code": "EC",
+      "title": "Detección de fuga / falta de refrigerante",
+      "cause": "Baja carga por fuga, restricción, instalación deficiente o sensores.",
+      "fix": "Prueba de fugas (N2), corregir, vacío y carga por peso; validar superheat/subcool.",
+      "severity": "Alta",
+      "tags": ["refrigerante", "fuga", "leak"]
+    },
+    {
+      "code": "P1",
+      "title": "Voltaje anormal",
+      "cause": "Bajo/alto voltaje, conexiones flojas, circuito compartido.",
+      "fix": "Medir línea, corregir instalación, reapretar terminales, usar protección eléctrica.",
+      "severity": "Alta",
+      "tags": ["voltaje", "power"]
+    },
+    {
+      "code": "E3",
+      "title": "Motor abanico anormal",
+      "cause": "Motor/driver, obstrucción, cableado o PCB.",
+      "fix": "Inspección motor/arnés, obstrucciones y control/PCB.",
+      "severity": "Media",
+      "tags": ["fan", "motor"]
+    }
+  ],
+  "Gree": [
+    {
+      "code": "E6",
+      "title": "Falla de comunicación Indoor ↔ Outdoor",
+      "cause": "Cableado incorrecto, conectores flojos, interferencia o PCB.",
+      "fix": "Verificar polaridad/continuidad, reapretar terminales, revisar conectores; PCB si persiste.",
+      "severity": "Alta",
+      "tags": ["comunicacion", "pcb", "wiring"]
+    },
+    {
+      "code": "F1",
+      "title": "Sensor ambiente interior (NTC) abierto/corto",
+      "cause": "Sensor NTC defectuoso o arnés/conector dañado.",
+      "fix": "Medir resistencia NTC, revisar arnés y reemplazar si está fuera de rango.",
+      "severity": "Media",
+      "tags": ["sensor", "ntc"]
+    },
+    {
+      "code": "F2",
+      "title": "Sensor evaporador interior (NTC) abierto/corto",
+      "cause": "Sensor/arnés defectuoso o humedad en conector.",
+      "fix": "Verificar NTC y arnés; reemplazar si falla.",
+      "severity": "Media",
+      "tags": ["sensor", "evaporador", "ntc"]
+    },
+    {
+      "code": "H3",
+      "title": "Protección por sobrecarga compresor",
+      "cause": "Condensador sucio, flujo de aire deficiente, carga incorrecta, alta presión.",
+      "fix": "Limpieza condensador, verificar abanico, validar carga y condiciones de operación.",
+      "severity": "Alta",
+      "tags": ["compresor", "alta", "presion"]
+    }
+  ],
+  "Carrier": [
+    {
+      "code": "E1",
+      "title": "Error de comunicación indoor/outdoor",
+      "cause": "Cableado, conectores o PCB.",
+      "fix": "Revisar continuidad/polaridad, reapretar terminales; PCB si persiste.",
+      "severity": "Alta",
+      "tags": ["comunicacion", "pcb"]
+    },
+    {
+      "code": "E4",
+      "title": "Sensor ambiente interior (T1) abierto/corto",
+      "cause": "Sensor/arnés defectuoso.",
+      "fix": "Medir sensor/NTC, revisar conectores y reemplazar si falla.",
+      "severity": "Media",
+      "tags": ["sensor", "t1"]
+    }
+  ],
+  "Fujitsu": [
+    {
+      "code": "E:01",
+      "title": "Error de comunicación indoor ↔ outdoor",
+      "cause": "Arnés, conectores, cableado o placas.",
+      "fix": "Revisar conexiones, continuidad y componentes de control.",
+      "severity": "Alta",
+      "tags": ["comunicacion", "pcb"]
+    }
+  ],
+  "Samsung": [
+    {
+      "code": "E101",
+      "title": "Comunicación indoor/outdoor (general)",
+      "cause": "Cableado, conectores, interferencia o PCB (varía por modelo).",
+      "fix": "Verificar cableado y conectores; diagnosticar PCB si aplica.",
+      "severity": "Alta",
+      "tags": ["comunicacion", "pcb"]
+    }
+  ]
+}
