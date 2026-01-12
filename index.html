@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Oasis Diagnósticos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="title">
+    <strong>Diagnósticos</strong>
+    <span>Historial técnico por cliente</span>
+  </div>
+  <button id="btnNew" class="btn">Nuevo</button>
+</header>
+
+<main class="wrap">
+
+  <!-- NUEVO DIAGNÓSTICO -->
+  <section class="card">
+    <h2>Nuevo diagnóstico</h2>
+
+    <div class="grid">
+      <input id="client" placeholder="Cliente">
+      <input id="equipment" placeholder="Equipo / Marca / Modelo">
+      <input id="location" placeholder="Ubicación">
+      <input id="date" type="date">
+    </div>
+
+    <textarea id="diagnosis" placeholder="Diagnóstico técnico"></textarea>
+    <textarea id="solution" placeholder="Solución / Recomendación"></textarea>
+
+    <div class="actions">
+      <button id="save" class="btn primary">Guardar</button>
+    </div>
+  </section>
+
+  <!-- HISTORIAL -->
+  <section class="card">
+    <h2>Historial</h2>
+    <input id="search" placeholder="Buscar por cliente o equipo">
+    <div id="list" class="list"></div>
+  </section>
+
+</main>
+
+<!-- BOTÓN HUB -->
+<a class="hub-fab" href="https://eliezelapolinaris2017-lab.github.io/oasis-hub/">← Hub</a>
+
+<script src="app.js"></script>
+</body>
+</html>
