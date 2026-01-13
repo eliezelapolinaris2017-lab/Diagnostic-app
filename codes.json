@@ -31,6 +31,86 @@
       "fix": "Inspección motor/arnés, obstrucciones y control/PCB.",
       "severity": "Media",
       "tags": ["fan", "motor"]
+    },
+    {
+      "code": "E2",
+      "title": "Sensor evaporador (NTC) abierto/corto",
+      "cause": "NTC defectuoso, conector sulfatado, arnés dañado.",
+      "fix": "Medir resistencia NTC, revisar arnés/conector; reemplazar si está fuera de rango.",
+      "severity": "Media",
+      "tags": ["sensor", "ntc", "evaporador"]
+    },
+    {
+      "code": "E4",
+      "title": "Sensor condensador (NTC) abierto/corto",
+      "cause": "Sensor NTC defectuoso o daño en arnés/conector.",
+      "fix": "Verificar NTC y arnés; reemplazar si falla.",
+      "severity": "Media",
+      "tags": ["sensor", "ntc", "condensador"]
+    },
+    {
+      "code": "E5",
+      "title": "Protección por sobrecorriente",
+      "cause": "Alta presión, abanico exterior fallando, IPM/PCB inverter, carga incorrecta.",
+      "fix": "Limpiar condensador, verificar abanico, medir amperaje; diagnosticar inverter si persiste.",
+      "severity": "Alta",
+      "tags": ["corriente", "inverter", "ipm"]
+    },
+    {
+      "code": "P4",
+      "title": "Protección por temperatura compresor/disipador",
+      "cause": "Condensador sucio, flujo de aire pobre, temperatura ambiente alta, sensor/NTC.",
+      "fix": "Limpieza, verificar abanico, validar carga; revisar sensor si persiste.",
+      "severity": "Alta",
+      "tags": ["temperatura", "compresor", "proteccion"]
+    },
+    {
+      "code": "F0",
+      "title": "Falla módulo inverter (IPM) (general)",
+      "cause": "IPM defectuoso, sobrecorriente, sobretensión, PCB dañada.",
+      "fix": "Verificar alimentación, revisar IPM/PCB; reemplazar módulo/placa según diagnóstico.",
+      "severity": "Alta",
+      "tags": ["ipm", "inverter", "pcb"]
+    },
+    {
+      "code": "F1",
+      "title": "Sensor ambiente interior (NTC) abierto/corto",
+      "cause": "NTC defectuoso, humedad en conector, arnés dañado.",
+      "fix": "Medir NTC, revisar arnés; reemplazar si falla.",
+      "severity": "Media",
+      "tags": ["sensor", "ntc", "ambiente"]
+    },
+    {
+      "code": "F2",
+      "title": "Sensor tubo interior (NTC) abierto/corto",
+      "cause": "Sensor/arnés defectuoso o conector sulfatado.",
+      "fix": "Verificar NTC y arnés; reemplazar si está fuera de rango.",
+      "severity": "Media",
+      "tags": ["sensor", "tubo", "ntc"]
+    },
+    {
+      "code": "F3",
+      "title": "Sensor descarga (NTC) abierto/corto",
+      "cause": "NTC descarga defectuoso o conector dañado.",
+      "fix": "Medir NTC descarga, revisar arnés; reemplazar si falla.",
+      "severity": "Alta",
+      "tags": ["sensor", "descarga", "ntc"]
+    },
+    {
+      "code": "P0",
+      "title": "Protección general / operación limitada",
+      "cause": "Parámetros fuera de rango, sensores, voltaje inestable o protección activa.",
+      "fix": "Revisar voltaje y sensores, reset; buscar código específico adicional si existe.",
+      "severity": "Media",
+      "tags": ["proteccion", "general"]
+    },
+    {
+      "code": "H6",
+      "title": "Protección por temperatura del módulo (general)",
+      "cause": "Disipación insuficiente, ventilación mala, PCB calentando.",
+      "fix": "Mejorar ventilación, revisar abanico, inspección PCB.",
+      "severity": "Alta",
+      "tags": ["pcb", "temperatura", "proteccion"]
     }
   ],
   "Gree": [
@@ -48,7 +128,7 @@
       "cause": "Sensor NTC defectuoso o arnés/conector dañado.",
       "fix": "Medir resistencia NTC, revisar arnés y reemplazar si está fuera de rango.",
       "severity": "Media",
-      "tags": ["sensor", "ntc"]
+      "tags": ["sensor", "ntc", "ambiente"]
     },
     {
       "code": "F2",
@@ -65,6 +145,86 @@
       "fix": "Limpieza condensador, verificar abanico, validar carga y condiciones de operación.",
       "severity": "Alta",
       "tags": ["compresor", "alta", "presion"]
+    },
+    {
+      "code": "E1",
+      "title": "Protección alta presión (según serie)",
+      "cause": "Condensador sucio, abanico exterior fallando, bloqueo de aire, carga incorrecta.",
+      "fix": "Limpieza, verificar abanico, revisar presiones y carga.",
+      "severity": "Alta",
+      "tags": ["alta", "presion", "condensador"]
+    },
+    {
+      "code": "E2",
+      "title": "Protección baja presión (según serie)",
+      "cause": "Baja carga por fuga, restricción, válvula parcialmente cerrada.",
+      "fix": "Prueba de fugas, corregir, vacío y carga por peso; revisar restricción.",
+      "severity": "Alta",
+      "tags": ["baja", "presion", "refrigerante"]
+    },
+    {
+      "code": "H5",
+      "title": "Protección IPM / inverter",
+      "cause": "IPM defectuoso, sobrecorriente, sobretensión o PCB.",
+      "fix": "Revisar alimentación, medir consumo; diagnosticar inverter/PCB.",
+      "severity": "Alta",
+      "tags": ["ipm", "inverter", "pcb"]
+    },
+    {
+      "code": "L3",
+      "title": "Falla motor exterior (según serie)",
+      "cause": "Motor, capacitor/driver, cableado o PCB.",
+      "fix": "Inspección motor/arnés, verificar driver; reemplazar si aplica.",
+      "severity": "Media",
+      "tags": ["fan", "motor", "outdoor"]
+    },
+    {
+      "code": "P0",
+      "title": "Protección general",
+      "cause": "Protección activa por condición anormal.",
+      "fix": "Revisar voltaje, sensores, presiones; reset y monitoreo.",
+      "severity": "Media",
+      "tags": ["proteccion", "general"]
+    },
+    {
+      "code": "P1",
+      "title": "Voltaje anormal",
+      "cause": "Bajo/alto voltaje, caída en línea, conexiones flojas.",
+      "fix": "Medir en carga, corregir instalación, terminales firmes, protector.",
+      "severity": "Alta",
+      "tags": ["voltaje", "power"]
+    },
+    {
+      "code": "P4",
+      "title": "Protección por temperatura",
+      "cause": "Condensador sucio, flujo aire pobre, sensor/NTC.",
+      "fix": "Limpieza, verificar abanico, revisar sensor.",
+      "severity": "Alta",
+      "tags": ["temperatura", "proteccion"]
+    },
+    {
+      "code": "F3",
+      "title": "Sensor descarga (NTC) abierto/corto",
+      "cause": "Sensor defectuoso o arnés.",
+      "fix": "Medir NTC descarga; reemplazar si falla.",
+      "severity": "Alta",
+      "tags": ["sensor", "descarga", "ntc"]
+    },
+    {
+      "code": "F4",
+      "title": "Sensor condensador (NTC) abierto/corto",
+      "cause": "NTC condensador defectuoso.",
+      "fix": "Verificar NTC y arnés; reemplazar.",
+      "severity": "Media",
+      "tags": ["sensor", "condensador", "ntc"]
+    },
+    {
+      "code": "H1",
+      "title": "Descongelación / protección (según serie)",
+      "cause": "Operación en condiciones frías o sensores.",
+      "fix": "Verificar sensores, revisar condiciones de operación.",
+      "severity": "Baja",
+      "tags": ["defrost", "sensor"]
     }
   ],
   "Carrier": [
@@ -82,7 +242,71 @@
       "cause": "Sensor/arnés defectuoso.",
       "fix": "Medir sensor/NTC, revisar conectores y reemplazar si falla.",
       "severity": "Media",
-      "tags": ["sensor", "t1"]
+      "tags": ["sensor", "t1", "ntc"]
+    },
+    {
+      "code": "E5",
+      "title": "Protección alta presión (general)",
+      "cause": "Condensador sucio, abanico exterior fallando, obstrucción aire, exceso de carga.",
+      "fix": "Limpieza condensador, verificar abanico, validar presiones/carga.",
+      "severity": "Alta",
+      "tags": ["alta", "presion", "condensador"]
+    },
+    {
+      "code": "E6",
+      "title": "Protección baja presión (general)",
+      "cause": "Baja carga por fuga, restricción, válvula.",
+      "fix": "Prueba de fugas, corregir, vacío y carga por peso; revisar restricción.",
+      "severity": "Alta",
+      "tags": ["baja", "presion", "refrigerante"]
+    },
+    {
+      "code": "P1",
+      "title": "Voltaje anormal",
+      "cause": "Bajo/alto voltaje, cableado o conexiones.",
+      "fix": "Medir voltaje en carga, corregir instalación, reapretar terminales.",
+      "severity": "Alta",
+      "tags": ["voltaje", "power"]
+    },
+    {
+      "code": "P4",
+      "title": "Protección por temperatura compresor",
+      "cause": "Flujo de aire deficiente, condensador sucio, sensor.",
+      "fix": "Limpieza, revisar abanico, revisar sensor/NTC.",
+      "severity": "Alta",
+      "tags": ["temperatura", "compresor", "proteccion"]
+    },
+    {
+      "code": "F1",
+      "title": "Sensor evaporador (T2) abierto/corto",
+      "cause": "NTC evaporador defectuoso o arnés.",
+      "fix": "Medir NTC, revisar arnés; reemplazar si falla.",
+      "severity": "Media",
+      "tags": ["sensor", "t2", "evaporador"]
+    },
+    {
+      "code": "F2",
+      "title": "Sensor condensador (T3) abierto/corto",
+      "cause": "NTC condensador defectuoso.",
+      "fix": "Verificar NTC y arnés; reemplazar.",
+      "severity": "Media",
+      "tags": ["sensor", "t3", "condensador"]
+    },
+    {
+      "code": "H3",
+      "title": "Sobrecarga compresor",
+      "cause": "Alta presión, ventilación exterior mala, inverter/board.",
+      "fix": "Limpieza, fan, presiones, amperaje; diagnosticar inverter.",
+      "severity": "Alta",
+      "tags": ["compresor", "overload", "presion"]
+    },
+    {
+      "code": "EL01",
+      "title": "Falla lógica/placa (general)",
+      "cause": "Error de control, firmware o PCB.",
+      "fix": "Reset, revisar conectores; si persiste: diagnóstico PCB.",
+      "severity": "Media",
+      "tags": ["pcb", "firmware", "control"]
     }
   ],
   "Fujitsu": [
@@ -92,7 +316,71 @@
       "cause": "Arnés, conectores, cableado o placas.",
       "fix": "Revisar conexiones, continuidad y componentes de control.",
       "severity": "Alta",
-      "tags": ["comunicacion", "pcb"]
+      "tags": ["comunicacion", "pcb", "wiring"]
+    },
+    {
+      "code": "E:02",
+      "title": "Error de comunicación/serial (varía por modelo)",
+      "cause": "Interferencia, cableado, conectores o PCB.",
+      "fix": "Verificar cableado y conectores; consultar tabla por modelo.",
+      "severity": "Alta",
+      "tags": ["comunicacion", "serial", "pcb"]
+    },
+    {
+      "code": "U0",
+      "title": "Carga baja / falta de refrigerante (general)",
+      "cause": "Fuga, carga insuficiente, restricción.",
+      "fix": "Prueba fugas (N2), corregir, vacío y carga por peso.",
+      "severity": "Alta",
+      "tags": ["refrigerante", "fuga", "leak"]
+    },
+    {
+      "code": "U4",
+      "title": "Error bus / comunicación",
+      "cause": "Cableado bus, conectores o PCB.",
+      "fix": "Revisar continuidad y conectores; PCB si persiste.",
+      "severity": "Alta",
+      "tags": ["comunicacion", "bus", "pcb"]
+    },
+    {
+      "code": "EE",
+      "title": "Error EEPROM / parámetros",
+      "cause": "Memoria/parametrización corrupta o board.",
+      "fix": "Reset, reconfigurar si aplica; si persiste: placa.",
+      "severity": "Alta",
+      "tags": ["eeprom", "pcb", "parametros"]
+    },
+    {
+      "code": "F1",
+      "title": "Sensor ambiente interior (general)",
+      "cause": "Sensor defectuoso o arnés.",
+      "fix": "Medir sensor, revisar arnés; reemplazar si falla.",
+      "severity": "Media",
+      "tags": ["sensor", "ambiente"]
+    },
+    {
+      "code": "F2",
+      "title": "Sensor evaporador (general)",
+      "cause": "Sensor/arnés defectuoso.",
+      "fix": "Verificar sensor/arnés; reemplazar si falla.",
+      "severity": "Media",
+      "tags": ["sensor", "evaporador"]
+    },
+    {
+      "code": "P1",
+      "title": "Voltaje anormal",
+      "cause": "Bajo/alto voltaje o caída en línea.",
+      "fix": "Medir en carga, corregir alimentación.",
+      "severity": "Alta",
+      "tags": ["voltaje", "power"]
+    },
+    {
+      "code": "P4",
+      "title": "Protección por temperatura",
+      "cause": "Flujo de aire, condiciones extremas o sensor.",
+      "fix": "Limpieza, verificar fan, revisar sensor.",
+      "severity": "Alta",
+      "tags": ["temperatura", "proteccion"]
     }
   ],
   "Samsung": [
@@ -102,7 +390,187 @@
       "cause": "Cableado, conectores, interferencia o PCB (varía por modelo).",
       "fix": "Verificar cableado y conectores; diagnosticar PCB si aplica.",
       "severity": "Alta",
-      "tags": ["comunicacion", "pcb"]
+      "tags": ["comunicacion", "pcb", "wiring"]
+    },
+    {
+      "code": "E121",
+      "title": "Sensor evaporador (NTC) abierto/corto",
+      "cause": "Sensor defectuoso o arnés/conector.",
+      "fix": "Medir NTC, revisar arnés; reemplazar si falla.",
+      "severity": "Media",
+      "tags": ["sensor", "evaporador", "ntc"]
+    },
+    {
+      "code": "E122",
+      "title": "Sensor ambiente (NTC) abierto/corto",
+      "cause": "NTC ambiente defectuoso o conector.",
+      "fix": "Verificar NTC y arnés; reemplazar.",
+      "severity": "Media",
+      "tags": ["sensor", "ambiente", "ntc"]
+    },
+    {
+      "code": "E154",
+      "title": "Falla abanico interior (general)",
+      "cause": "Motor/driver, obstrucción, arnés o PCB.",
+      "fix": "Inspección motor y obstrucciones; revisar PCB si persiste.",
+      "severity": "Media",
+      "tags": ["fan", "motor", "indoor"]
+    },
+    {
+      "code": "E458",
+      "title": "Falla inverter/IPM (general)",
+      "cause": "IPM, sobretensión, sobrecorriente o PCB.",
+      "fix": "Verificar alimentación, medir consumo; diagnóstico PCB inverter.",
+      "severity": "Alta",
+      "tags": ["inverter", "ipm", "pcb"]
+    },
+    {
+      "code": "P1",
+      "title": "Voltaje anormal (general)",
+      "cause": "Bajo/alto voltaje, conexiones flojas.",
+      "fix": "Medir voltaje en carga; corregir instalación y terminales.",
+      "severity": "Alta",
+      "tags": ["voltaje", "power"]
+    },
+    {
+      "code": "P4",
+      "title": "Protección por temperatura (general)",
+      "cause": "Condensador sucio, flujo aire pobre, sensor.",
+      "fix": "Limpieza, verificar fan, revisar sensores.",
+      "severity": "Alta",
+      "tags": ["temperatura", "proteccion"]
+    },
+    {
+      "code": "U0",
+      "title": "Falta refrigerante / fuga (general)",
+      "cause": "Baja carga por fuga o instalación deficiente.",
+      "fix": "Leak test, corregir, vacío y carga por peso.",
+      "severity": "Alta",
+      "tags": ["refrigerante", "fuga", "leak"]
+    }
+  ],
+  "TGM": [
+    {
+      "code": "E1",
+      "title": "Falla de comunicación Indoor ↔ Outdoor",
+      "cause": "Cableado o conectores flojos; posible PCB.",
+      "fix": "Verificar continuidad/polaridad, reapretar terminales; PCB si persiste.",
+      "severity": "Alta",
+      "tags": ["comunicacion", "pcb", "wiring"]
+    },
+    {
+      "code": "E4",
+      "title": "Protección alta presión (general)",
+      "cause": "Condensador sucio, abanico exterior fallando, obstrucción.",
+      "fix": "Limpieza condensador, revisar fan y presiones.",
+      "severity": "Alta",
+      "tags": ["alta", "presion", "condensador"]
+    },
+    {
+      "code": "E6",
+      "title": "Protección baja presión (general)",
+      "cause": "Baja carga por fuga o restricción.",
+      "fix": "Prueba fugas, corregir, vacío y carga por peso.",
+      "severity": "Alta",
+      "tags": ["baja", "presion", "refrigerante"]
+    },
+    {
+      "code": "P1",
+      "title": "Voltaje anormal",
+      "cause": "Bajo/alto voltaje o caída de línea.",
+      "fix": "Medir en carga; corregir instalación; protector.",
+      "severity": "Alta",
+      "tags": ["voltaje", "power"]
+    },
+    {
+      "code": "P2",
+      "title": "Sobre corriente",
+      "cause": "Alta presión, inverter o compresor forzado.",
+      "fix": "Presiones, amperaje; revisar inverter.",
+      "severity": "Alta",
+      "tags": ["corriente", "inverter", "compresor"]
+    },
+    {
+      "code": "F1",
+      "title": "Sensor ambiente (NTC) abierto/corto",
+      "cause": "NTC o arnés defectuoso.",
+      "fix": "Medir NTC; reemplazar si falla.",
+      "severity": "Media",
+      "tags": ["sensor", "ambiente", "ntc"]
+    },
+    {
+      "code": "F2",
+      "title": "Sensor evaporador (NTC) abierto/corto",
+      "cause": "Sensor/arnés defectuoso.",
+      "fix": "Verificar y reemplazar.",
+      "severity": "Media",
+      "tags": ["sensor", "evaporador", "ntc"]
+    },
+    {
+      "code": "F3",
+      "title": "Sensor descarga (NTC) abierto/corto",
+      "cause": "NTC descarga defectuoso.",
+      "fix": "Medir y reemplazar.",
+      "severity": "Alta",
+      "tags": ["sensor", "descarga", "ntc"]
+    }
+  ],
+  "AirMax": [
+    {
+      "code": "E1",
+      "title": "Falla de comunicación Indoor ↔ Outdoor",
+      "cause": "Cableado, conectores flojos o PCB (según modelo).",
+      "fix": "Verificar continuidad/polaridad; revisar conectores; PCB si persiste.",
+      "severity": "Alta",
+      "tags": ["comunicacion", "wiring", "pcb"]
+    },
+    {
+      "code": "E3",
+      "title": "Congelamiento / temp evaporador baja (general)",
+      "cause": "Filtro sucio, flujo bajo, baja carga o restricción.",
+      "fix": "Limpieza, verificar blower, revisar carga y restricción.",
+      "severity": "Media",
+      "tags": ["congelamiento", "evaporador", "refrigerante"]
+    },
+    {
+      "code": "EC",
+      "title": "Fuga / falta de refrigerante (general)",
+      "cause": "Baja carga por fuga, instalación deficiente.",
+      "fix": "Leak test (N2), corregir, vacío y carga por peso.",
+      "severity": "Alta",
+      "tags": ["refrigerante", "fuga", "leak"]
+    },
+    {
+      "code": "P1",
+      "title": "Voltaje anormal",
+      "cause": "Bajo/alto voltaje o conexiones flojas.",
+      "fix": "Medir voltaje en carga, corregir terminales y alimentación.",
+      "severity": "Alta",
+      "tags": ["voltaje", "power"]
+    },
+    {
+      "code": "P4",
+      "title": "Protección por temperatura (general)",
+      "cause": "Condensador sucio, fan exterior, sensor/NTC.",
+      "fix": "Limpieza, revisar fan, validar sensores.",
+      "severity": "Alta",
+      "tags": ["temperatura", "proteccion"]
+    },
+    {
+      "code": "F1",
+      "title": "Sensor ambiente (NTC) abierto/corto",
+      "cause": "NTC defectuoso o conector dañado.",
+      "fix": "Medir NTC, revisar arnés; reemplazar.",
+      "severity": "Media",
+      "tags": ["sensor", "ambiente", "ntc"]
+    },
+    {
+      "code": "F2",
+      "title": "Sensor evaporador (NTC) abierto/corto",
+      "cause": "Sensor/arnés defectuoso.",
+      "fix": "Verificar y reemplazar.",
+      "severity": "Media",
+      "tags": ["sensor", "evaporador", "ntc"]
     }
   ]
 }
